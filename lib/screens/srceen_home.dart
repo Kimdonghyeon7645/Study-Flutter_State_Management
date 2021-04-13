@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_list/screens/normal/srceen_first.dart';
-import 'package:todo_list/screens/named/srceen_first.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
