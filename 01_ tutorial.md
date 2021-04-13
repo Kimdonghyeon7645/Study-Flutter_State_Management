@@ -23,5 +23,3 @@ dependencies:
 그리고 실제 코드에서 ```MaterialApp()``` 대신, **GetMaterialApp()** 을 사용하면 된다!  
 (빨간 밑줄이 그어지면, [alt + enter] 로, **import 'package:get/get.dart';** 임포트 문을 자동 추가) 
 
-
-## 
