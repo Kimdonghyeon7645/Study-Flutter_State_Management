@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:todo_list/screens/named/srceen_first.dart';
 import 'package:todo_list/screens/named/srceen_second.dart';
 import 'package:todo_list/screens/srceen_home.dart';
+import 'package:todo_list/screens/srceen_with_argument.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,9 +31,11 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/", page: () => HomePage(), transition: Transition.zoom),
         GetPage(name: "/first", page: () => FirstNamedPage(), transition: Transition.zoom),
         GetPage(name: "/second", page: () => SecondNamedPage(), transition: Transition.zoom),
+        GetPage(name: "/next", page: () => NextPage()),
       ],
       // 네임드 라우팅에서 Transition(페이지 넘길때의 애니매이션)은
       // GetPage() 의 속성으로 넣어줄 수 있다.
+      // 참고로 getPages 수정시, hot reload 말고 hot restart 를 해야 반영이 된다.
     );
   }
 }
