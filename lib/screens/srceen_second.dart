@@ -18,6 +18,7 @@ class SecondPage extends StatelessWidget {
               onPressed: () {
                 // // 1. 일반적인 방식 : context를 넘겨줘야 되기에, 빌드 함수 밖에서 하려면 context를 넘겨줘야 한다.
                 // Navigator.of(context).pop();
+
                 // 2. GetX 방식
                 Get.back();
               },
@@ -25,6 +26,12 @@ class SecondPage extends StatelessWidget {
             OutlinedButton(
               child: Text("홈으로 가기"),
               onPressed: () {
+                // // 1. 일반적인 방식
+                // Navigator.of(context).pushAndRemoveUntil(
+                //     MaterialPageRoute(builder: (_) => HomePage()),
+                //     (route) => false);
+
+                // 2. GetX 방식
                 // Get.to(HomePage());
                 // -> 예전 페이지를 방문한 티스토리가 남고, 앱바 왼쪽에도 되돌아가기 버튼이 생기지만,
                 Get.offAll(HomePage());

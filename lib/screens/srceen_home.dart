@@ -21,7 +21,8 @@ class HomePage extends StatelessWidget {
                 // 1. 원래 방식
                 // Navigator.of(context)
                 //     .push(MaterialPageRoute(builder: (_) => FirstPage()));
-                // // 2. GetX 방식
+
+                // 2. GetX 방식
                 Get.to(FirstPage());
               },
             ),
