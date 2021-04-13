@@ -27,7 +27,16 @@ class HomePage extends StatelessWidget {
                 Get.to(FirstPage());
               },
             ),
-            // ElevatedButton(onPressed: () {}, child: Text("일반적인 라우트")),
+            OutlinedButton(
+              child: Text("Named 라우팅 방식"),
+              onPressed: () {
+                // 1. 원래 방식
+                // Navigator.of(context).pushNamed("/first");
+
+                // 2. GetX 방식
+                Get.toNamed("/first");
+              },
+            ),
           ],
         ),
       ),
