@@ -23,7 +23,9 @@ class HomePage extends StatelessWidget {
                 //     .push(MaterialPageRoute(builder: (_) => FirstPage()));
 
                 // 2. GetX 방식
-                Get.to(FirstPage());
+                Get.to(FirstPage(), transition: Transition.zoom);
+                // 일반적인 라우팅에서 Transition(페이지 넘길때의 애니매이션)은
+                // Get.to() 등의 속성으로 넣어줄 수 있다.
               },
             ),
             OutlinedButton(
