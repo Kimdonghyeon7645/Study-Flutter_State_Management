@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todo_list/screens/srceen_second.dart';
+import 'package:todo_list/screens/named/srceen_second.dart';
 
-class FirstPage extends StatelessWidget {
+class FirstNamedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class FirstPage extends StatelessWidget {
                 // Navigator.of(context).pop();
 
                 // 2. GetX 방식
-                Get.to(SecondPage());
+                Get.to(SecondNamedPage());
               },
             ),
           ],

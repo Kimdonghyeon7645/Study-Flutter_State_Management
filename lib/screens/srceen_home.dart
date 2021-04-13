@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todo_list/screens/srceen_first.dart';
+import 'package:todo_list/screens/normal/srceen_first.dart';
+import 'package:todo_list/screens/named/srceen_first.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             OutlinedButton(
-              child: Text("첫 페이지 이동"),
+              child: Text("일반적인 라우팅 방식"),
               onPressed: () {
                 // 1. 원래 방식
                 // Navigator.of(context)
