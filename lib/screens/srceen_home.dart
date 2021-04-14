@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_list/screens/normal/srceen_first.dart';
-import 'package:todo_list/screens/srceen_with_parameters.dart';
+import 'package:todo_list/screens/srceen_with_simple_state_manage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -56,6 +56,12 @@ class HomePage extends StatelessWidget {
                 Get.toNamed("/user/7645?name=한울&age=100");
                 // path parameters : getPages[] 의 GetPage() 에서 ':인자이름' 과 같이 지정해주고, 실제 Get.toNamed() 에서 url에 인자값을 넘김
                 // query parameters : Get.toNamed() 의 url에 '?인자이름=인자값&인자이름=인자값' 과 같이 인자값을 넘김
+              },
+            ),
+            OutlinedButton(
+              child: Text("단순 상태 관리"),
+              onPressed: () {
+                Get.to(SimpleStateManagePage());
               },
             ),
           ],
