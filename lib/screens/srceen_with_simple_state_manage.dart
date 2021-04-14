@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_list/controller/count_controller_with_provider.dart';
 import 'package:todo_list/widgets/with_getx.dart';
 import 'package:todo_list/widgets/with_provider.dart';
 
@@ -13,7 +15,12 @@ class SimpleStateManagePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(child: WithProvider()),
+            Expanded(
+              child: ChangeNotifierProvider<CountControllerWithProvider>(
+                create: (_) => CountControllerWithProvider(),
+                child: WithProvider(),
+              ),
+            ),
             Expanded(child: WithGetX()),
           ],
         ),
