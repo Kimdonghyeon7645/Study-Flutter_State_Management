@@ -5,6 +5,6 @@ class CountControllerWithProvider extends ChangeNotifier {
 
   void increase() {
     count ++;
-    notifyListeners();    // 변수 변경이 반영
+    notifyListeners();    // 변수 업데이트 반영
   }
 }
