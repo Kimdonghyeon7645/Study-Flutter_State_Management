@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 class CountControllerWithGetX extends GetxController {
   int count = 0;    // 변수 초기화
 
-  void increase() {
+  void increase(id) {
     count ++;
-    update();   // 변수 업데이트 반영
+    update([id]);   // 변수 업데이트 반영
   }
 }
