@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/widgets/with_getx.dart';
+import 'package:todo_list/widgets/with_provider.dart';
 
 class SimpleStateManagePage extends StatelessWidget {
   @override
@@ -11,11 +13,8 @@ class SimpleStateManagePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(""),
-            IconButton(
-              icon: Icon(Icons.add),
-              onPressed: () {},
-            ),
+            Expanded(child: WithProvider()),
+            Expanded(child: WithGetX()),
           ],
         ),
       ),
