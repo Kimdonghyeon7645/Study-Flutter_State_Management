@@ -24,7 +24,19 @@ class ReactiveStateManage extends StatelessWidget {
                 Obx(() => 위젯클래스)
                 단, 필수로 Obx() 안의 위젯 클래스에선 옵저버블을 사용해야 한다. (아니면 에러 발생할 수 있음)
              */
-            Obx(() => Text("${Get.find<CountControllerWithReactive>().count.value}", style: TextStyle(fontSize: 50))),
+            Obx(() {
+              print("업데이트!");
+              /*
+               반응형 상태 관리 장점 1.
+               값이 변경되지 않으면 함수를 호출하지 않는다.
+               ex. 이미 값이 5인데 5로 변경하는 함수를 호출할 경우,
+               GetBuilder(단순 상태 관리)에선 새로 리로드되지만, Obx(반응형 상태 관리)에선 리로드되지 않는다.
+               이 점을 잘 이용한다면 단순 상태 관리에서보다 리소스를 아낄 수 있다.
+               */
+              return Text(
+                  "${Get.find<CountControllerWithReactive>().count.value}",
+                  style: TextStyle(fontSize: 50));
+            }),
             /*
              Obx(() => 위젯) 말고도 GetX(builder: (_) => 위젯) 을 쓸 수 있다. (근데 코드 길어져서 Obx가 편하긴 하다)
              * 참고 :
@@ -34,7 +46,14 @@ class ReactiveStateManage extends StatelessWidget {
             // GetX(builder: (CountControllerWithReactive controller) {
             //   return Text("${controller.count.value}", style: TextStyle(fontSize: 50));
             // }),
-            IconButton(icon: Icon(Icons.add), onPressed: () => Get.find<CountControllerWithReactive>().increase()),
+            IconButton(
+                icon: Icon(Icons.add),
+                onPressed: () =>
+                    Get.find<CountControllerWithReactive>().increase()),
+            TextButton(
+                child: Text("5로 변경"),
+                onPressed: () =>
+                    Get.find<CountControllerWithReactive>().setNumber(5)),
           ],
         ),
       ),
