@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_list/screens/normal/srceen_first.dart';
+import 'package:todo_list/screens/screen_with_reactive_state_manage.dart';
 import 'package:todo_list/screens/srceen_with_simple_state_manage.dart';
 
 class HomePage extends StatelessWidget {
@@ -67,7 +68,7 @@ class HomePage extends StatelessWidget {
             OutlinedButton(
               child: Text("반응형 상태 관리"),
               onPressed: () {
-                Get.to(SimpleStateManagePage());
+                Get.to(ReactiveStateManage());
               },
             ),
           ],
