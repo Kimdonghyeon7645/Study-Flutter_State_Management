@@ -25,6 +25,15 @@ class ReactiveStateManage extends StatelessWidget {
                 단, 필수로 Obx() 안의 위젯 클래스에선 옵저버블을 사용해야 한다. (아니면 에러 발생할 수 있음)
              */
             Obx(() => Text("${Get.find<CountControllerWithReactive>().count.value}", style: TextStyle(fontSize: 50))),
+            /*
+             Obx(() => 위젯) 말고도 GetX(builder: (_) => 위젯) 을 쓸 수 있다. (근데 코드 길어져서 Obx가 편하긴 하다)
+             * 참고 :
+                이전 버전에서는 builder는 위젯으로 취급하지 않았으나, 최근 버전부턴 위젯으로 인식하고 있다고 한다.
+                이 때문에 현재 GetX()를 사용하는 방식은 에러가 난다...
+             */
+            // GetX(builder: (CountControllerWithReactive controller) {
+            //   return Text("${controller.count.value}", style: TextStyle(fontSize: 50));
+            // }),
             IconButton(icon: Icon(Icons.add), onPressed: () => Get.find<CountControllerWithReactive>().increase()),
           ],
         ),
