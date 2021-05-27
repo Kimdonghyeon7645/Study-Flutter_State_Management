@@ -64,6 +64,12 @@ class HomePage extends StatelessWidget {
                 Get.to(SimpleStateManagePage());
               },
             ),
+            OutlinedButton(
+              child: Text("반응형 상태 관리"),
+              onPressed: () {
+                Get.to(SimpleStateManagePage());
+              },
+            ),
           ],
         ),
       ),
