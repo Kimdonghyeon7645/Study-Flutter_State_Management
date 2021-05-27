@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: HomePage(),
-      initialRoute: "/test",    // 네임드 라우팅 하기위한 속성 (getX 전에도 있었음)
+      initialRoute: "/",    // 네임드 라우팅 하기위한 속성 (getX 전에도 있었음)
       // // 1. 일반적인 방식
       // routes: {
       //   "/": (context) => HomePage(),
