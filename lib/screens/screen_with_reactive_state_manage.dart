@@ -25,7 +25,7 @@ class ReactiveStateManage extends StatelessWidget {
                 단, 필수로 Obx() 안의 위젯 클래스에선 옵저버블을 사용해야 한다. (아니면 에러 발생할 수 있음)
              */
             Obx(() {
-              print("업데이트!");
+              // print("업데이트!");
               /*
                반응형 상태 관리 장점 1.
                값이 변경되지 않으면 함수를 호출하지 않는다.
