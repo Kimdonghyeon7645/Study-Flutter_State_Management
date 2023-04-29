@@ -1,34 +1,20 @@
-# GetX 알아보기!
+# Flutter 상태관리 라이브러리 수련
 
-![getX](https://raw.githubusercontent.com/jonataslaw/getx-community/master/get.png)
+chatGPT 피셜, Flutter 주요 상태관리 라이브러리라고 하면 아래 4가지를 추천해준다.
+```md
+- __Provider:__ Flutter 팀에서 공식적으로 지원하는 상태 관리 라이브러리로, 간단한 구현과 높은 성능을 보장합니다.
+- __BLoC (Business Logic Component):__ Flutter에서 가장 인기 있는 상태 관리 패턴 중 하나입니다. 앱의 로직과 UI를 분리하여 관리하며, ReactiveX와 같은 리액티브 프로그래밍 패턴을 기반으로 구현됩니다.
+- __GetX:__ 상태 관리, 라우팅, 의존성 관리 등을 모두 제공하는 전체적인 프레임워크입니다. 간단한 구현과 높은 성능을 자랑하며, 특히 작은 규모의 앱 개발에 적합합니다.
+- __Redux:__ React의 상태 관리 라이브러리인 Redux를 Flutter에서 사용할 수 있도록 만든 패키지입니다. 간단한 구현과 예측 가능한 상태 변화를 보장합니다.
+```
 
-현재 패키지 1등인데는 다 이유가 있다.  
-상태 관리 말고도 수십개의 기능을 지원하기에, 거의 미니 프레임워크라고 불릴 정도다!  
-이러한 GetX를 익혀보자!
+기존엔 GetX로만 좁게 알고 있었는데,
+이번에 4가지 모두 타파해고, 나중에 복습하기 좋은 사이즈로 정리하자.
 
-## 셋팅
+## 목차
 
-[pub.dev > getX 페이지](https://pub.dev/packages/get) 에서, **Installing** 에서 하란데로 한다.
-
-```yaml
-# pubspec.yaml 에서 아래의 dependencies 에, 'get:' 을 추가한다.
-dependencies:
-  flutter:
-    sdk: flutter
-
-  cupertino_icons: ^1.0.2
-  get:    # 추가된 부분
-``` 
-
-그리고 실제 코드에서 ```MaterialApp()``` 대신, **GetMaterialApp()** 을 사용하면 된다!  
-(빨간 밑줄이 그어지면, [alt + enter] 로, **import 'package:get/get.dart';** 임포트 문을 자동 추가) 
-
-
-## getX의 기능 활용
-
-1. [route(페이지 이동) 관리](https://github.com/Kimdonghyeon7645/TodoList-with-getX/blob/master/02_%20route%20%EA%B4%80%EB%A6%AC.md)
-2. [단순 상태 관리](https://github.com/Kimdonghyeon7645/TodoList-with-getX/blob/master/03_%20%EB%8B%A8%EC%88%9C%20%EC%83%81%ED%83%9C%20%EA%B4%80%EB%A6%AC.md)
-
-## 참고
-
-- [개발하는 남자 - getX 편](https://www.youtube.com/watch?v=RIR8W5kSfNE) 
+- GetX
+- BLoC
+- Provider
+- Redux
+  
