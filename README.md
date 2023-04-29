@@ -14,7 +14,7 @@ chatGPT 피셜, Flutter 주요 상태관리 라이브러리라고 하면 아래 
 ## 목차
 
 - GetX
-- BLoC
 - Provider
+- BLoC
 - Redux
   
