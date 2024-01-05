@@ -23,4 +23,5 @@
 
 - [GetX pub.dev 공식문서](https://pub.dev/packages/get)
 - [GetX pub.dev 문서-한글번역](https://github.com/jonataslaw/getx/blob/master/README.ko-kr.md)
-- [유튜브 GetX 강의(개발하는남자님 영상)(강추)](https://www.youtube.com/playlist?list=PLgRxBCVPaZ_3bPtdyE0Tj-w1CFX01bgUE)
+- [DeKu GetX 정리 블로그](https://deku.posstree.com/ko/flutter/getx/state/)
+- [유튜브 GetX 강의('개발하는남자'님 영상)](https://www.youtube.com/playlist?list=PLgRxBCVPaZ_3bPtdyE0Tj-w1CFX01bgUE)
