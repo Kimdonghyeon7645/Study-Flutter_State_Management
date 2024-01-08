@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sample_app/controllers/test_controller.dart';
+import 'package:sample_app/screens/getx_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,18 +11,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(TestController());
     return GetMaterialApp(
-      home: Scaffold(
-        body: Center(
-            child: Column(
-          children: [
-            GetBuilder<TestController>(
-              builder: (ctr) => Text("${ctr.count}"),
-            ),
-          ],
-        )),
-      ),
+      initialRoute: "/getx",
+      getPages: [
+        GetPage(name: '/getx', page: () => const GetXScreen()),
+      ],
     );
   }
 }
