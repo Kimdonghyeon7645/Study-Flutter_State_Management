@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sample_app/screens/getx_screen.dart';
+import 'package:sample_app/themes/light_theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,6 +13,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: lightTheme,
       initialRoute: "/getx",
       getPages: [
         GetPage(name: '/getx', page: () => const GetXScreen()),
