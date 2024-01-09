@@ -12,8 +12,8 @@ class GetXScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            // GetX<ReactiveController>(builder: (_) => Text("${_.count.value}")),
-            Obx(() => Text(Get.find<ReactiveController>().name.value)),
+            GetX<ReactiveController>(builder: (_) => Text("${_.count.value}")),
+            // Obx(() => Text(Get.find<ReactiveController>().name.value)),
             OutlinedButton(
                 onPressed: Get.find<ReactiveController>().increment, child: const Text("증가"))
           ],
