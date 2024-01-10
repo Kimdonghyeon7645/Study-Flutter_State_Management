@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sample_app/screens/getx_screen.dart';
+import 'package:sample_app/themes/dark_theme.dart';
 import 'package:sample_app/themes/light_theme.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
+      darkTheme: darkTheme,
       initialRoute: "/getx",
       getPages: [
         GetPage(name: '/getx', page: () => const GetXScreen()),
