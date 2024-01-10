@@ -15,38 +15,31 @@ String repeatString(String input, int count) {
   return result.toString();
 }
 
-void showSnackBarBox({message}) {
-  for (int i = 1; i < 20; i++) {
-    final msg = repeatString("옹", i);
+void showCustomSnackBar(message) {
+  final textPainter = TextPainter(
+    text: TextSpan(text: message, style: const TextStyle(fontSize: 14)),
+    maxLines: 1,
+    textDirection: TextDirection.ltr,
+  )..layout(minWidth: 0, maxWidth: double.infinity);
+  final textWidth = textPainter.width;
 
-    final textPainter = TextPainter(
-      text: TextSpan(
-        text: msg,
-        style: const TextStyle(fontSize: 14),
+  Get.showSnackbar(
+    GetSnackBar(
+      message: message,
+      duration: const Duration(milliseconds: 3500),
+      animationDuration: const Duration(milliseconds: 600),
+      backgroundColor: Colors.black.withOpacity(0.6),
+      borderRadius: 30,
+      padding: EdgeInsets.symmetric(
+        horizontal: Get.width * 0.05,
+        vertical: Get.height * 0.0135,
       ),
-      maxLines: 1,
-      textDirection: TextDirection.ltr,
-    )..layout(minWidth: 0, maxWidth: double.infinity);
-    final textWidth = textPainter.width;
-
-    Get.showSnackbar(
-      GetSnackBar(
-        message: msg,
-        duration: const Duration(milliseconds: 1500),
-        animationDuration: const Duration(milliseconds: 600),
-        backgroundColor: Colors.black.withOpacity(0.6),
-        borderRadius: 30,
-        padding: EdgeInsets.symmetric(
-          horizontal: Get.width * 0.05,
-          vertical: Get.height * 0.0135,
-        ),
-        margin: EdgeInsets.symmetric(
-          horizontal: (Get.width - textWidth - Get.width * 0.1) / 2,
-          vertical: Get.height * 0.02,
-        ),
+      margin: EdgeInsets.symmetric(
+        horizontal: (Get.width - textWidth - Get.width * 0.1) / 2,
+        vertical: Get.height * 0.02,
       ),
-    );
-  }
+    ),
+  );
 }
 
 class GetXScreen extends StatelessWidget {
@@ -71,15 +64,16 @@ class GetXScreen extends StatelessWidget {
               GetX<ReactiveController>(builder: (_) => Text("${_.count.value}")),
               // Obx(() => Text(Get.find<ReactiveController>().name.value)),
               // OutlinedButton(onPressed: Get.find<ReactiveController>().increment, child: const Text("증가")),
+              // OutlinedButton(
+              //   onPressed: () => Get.showSnackbar(const GetSnackBar(
+              //     title: "Hi",
+              //     message: "i am a GetSnackBar",
+              //     duration: Duration(milliseconds: 3500),
+              //   )),
+              //   child: const Text("팝업"),
+              // ),
               OutlinedButton(
-                onPressed: () => Get.showSnackbar(const GetSnackBar(
-                  title: "Hi",
-                  message: "i am a GetSnackBar",
-                  duration: Duration(milliseconds: 3500),
-                )),
-                child: const Text("팝업"),
-              )
-              // OutlinedButton(onPressed: () => showSnackBarBox(message: "팝업"), child: Text("팝업"))
+                  onPressed: () => showCustomSnackBar("토스트 메시지 예시입니다."), child: Text("팝업"))
             ],
           ),
         ),
