@@ -61,19 +61,16 @@ class GetXScreen extends StatelessWidget {
               SizedBox(
                 height: Get.height * 0.1,
               ),
-              GetX<ReactiveController>(builder: (_) => Text("${_.count.value}")),
-              // Obx(() => Text(Get.find<ReactiveController>().name.value)),
-              // OutlinedButton(onPressed: Get.find<ReactiveController>().increment, child: const Text("증가")),
-              // OutlinedButton(
-              //   onPressed: () => Get.showSnackbar(const GetSnackBar(
-              //     title: "Hi",
-              //     message: "i am a GetSnackBar",
-              //     duration: Duration(milliseconds: 3500),
-              //   )),
-              //   child: const Text("팝업"),
-              // ),
+              // GetX<ReactiveController>(builder: (_) => Text("${_.count.value}")),
+              // OutlinedButton(onPressed: () => showCustomSnackBar("토스트 메시지 예시"), child: Text("팝업")),
               OutlinedButton(
-                  onPressed: () => showCustomSnackBar("토스트 메시지 예시입니다."), child: Text("팝업"))
+                  onPressed: () => Get.defaultDialog(
+                        title: "경고",
+                        middleText: "경고는 영어로 Warning",
+                        textConfirm: "확인",
+                        onConfirm: () => print("ok"),
+                      ),
+                  child: Text("버튼")),
             ],
           ),
         ),
