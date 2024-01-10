@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sample_app/controllers/test_controller.dart';
+import 'package:sample_app/themes/dark_theme.dart';
+import 'package:sample_app/themes/light_theme.dart';
 
 String repeatString(String input, int count) {
   if (count <= 0) {
@@ -50,34 +52,32 @@ class GetXScreen extends StatelessWidget {
     Get.put(ReactiveController());
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
         elevation: 0,
+        title: Text(Get.isDarkMode ? "다크모드" : "기본모드"),
       ),
-      body: Container(
-        color: Colors.white,
-        child: Center(
-          child: Column(
-            children: [
-              SizedBox(
-                height: Get.height * 0.1,
-              ),
-              // GetX<ReactiveController>(builder: (_) => Text("${_.count.value}")),
-              // OutlinedButton(onPressed: () => showCustomSnackBar("토스트 메시지 예시"), child: Text("팝업")),
-              OutlinedButton(
-                onPressed: () => Get.bottomSheet(
-                  Container(
-                    width: Get.width,
-                    padding: EdgeInsets.all(10),
-                    child: Column(children: [
-                      Text("바텀시트 영역입니다."),
-                    ]),
-                  ),
-                  backgroundColor: Colors.white,
-                ),
-                child: Text("버튼"),
-              ),
-            ],
-          ),
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: Get.height * 0.1,
+            ),
+            // GetX<ReactiveController>(builder: (_) => Text("${_.count.value}")),
+            // OutlinedButton(onPressed: () => showCustomSnackBar("토스트 메시지 예시"), child: Text("팝업")),
+            OutlinedButton(
+              onPressed: () {
+                Get.changeTheme(Get.isDarkMode ? lightTheme : darkTheme);
+                // Get.changeThemeMode(Get.isDarkMode ? ThemeMode.light : ThemeMode.dark);
+              },
+              child: Text("전환"),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Get.changeTheme(darkTheme);
+                // Get.changeThemeMode(ThemeMode.dark);
+              },
+              child: Text("다크모드"),
+            ),
+          ],
         ),
       ),
     );

@@ -14,9 +14,9 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
+      debugShowCheckedModeBanner: false,
       initialRoute: "/getx",
       getPages: [
         GetPage(name: '/getx', page: () => const GetXScreen()),
