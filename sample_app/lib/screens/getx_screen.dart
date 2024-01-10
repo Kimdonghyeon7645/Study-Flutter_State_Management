@@ -64,13 +64,18 @@ class GetXScreen extends StatelessWidget {
               // GetX<ReactiveController>(builder: (_) => Text("${_.count.value}")),
               // OutlinedButton(onPressed: () => showCustomSnackBar("토스트 메시지 예시"), child: Text("팝업")),
               OutlinedButton(
-                  onPressed: () => Get.defaultDialog(
-                        title: "경고",
-                        middleText: "경고는 영어로 Warning",
-                        textConfirm: "확인",
-                        onConfirm: () => print("ok"),
-                      ),
-                  child: Text("버튼")),
+                onPressed: () => Get.bottomSheet(
+                  Container(
+                    width: Get.width,
+                    padding: EdgeInsets.all(10),
+                    child: Column(children: [
+                      Text("바텀시트 영역입니다."),
+                    ]),
+                  ),
+                  backgroundColor: Colors.white,
+                ),
+                child: Text("버튼"),
+              ),
             ],
           ),
         ),
